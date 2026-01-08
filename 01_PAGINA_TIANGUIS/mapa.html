@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mapa del Tianguis Cultural en el Parque Agua Azul, Guadalajara. Encuentra las zonas de vinilos, tatuajes, comida y más.">
+
+    <title>Mapa | Tianguis Cultural de Guadalajara</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">TIANGUIS<span>.</span>CULTURAL</a>
+
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav__link">Inicio</a>
+                <a href="directorio.html" class="nav__link">Directorio</a>
+                <a href="mapa.html" class="nav__link nav__link--active">Mapa</a>
+                <a href="historia.html" class="nav__link">Historia</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-header__title">Agua Azul Navigator</h1>
+                <p class="page-header__description">
+                    Mapa del Tianguis Cultural en el Parque Agua Azul.
+                    Ubica las zonas y servicios.
+                </p>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="section">
+            <div class="container">
+                <div class="mapa-container reveal">
+                    <!-- SVG Map -->
+                    <div class="mapa-svg">
+                        <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background -->
+                            <rect width="800" height="600" fill="#E8E6E1" />
+
+                            <!-- Park Outline -->
+                            <rect x="50" y="50" width="700" height="500" fill="none" stroke="#121212"
+                                stroke-width="4" />
+
+                            <!-- Grid Lines -->
+                            <line x1="50" y1="150" x2="750" y2="150" stroke="#6B6B6B" stroke-width="1"
+                                stroke-dasharray="5,5" />
+                            <line x1="50" y1="250" x2="750" y2="250" stroke="#6B6B6B" stroke-width="1"
+                                stroke-dasharray="5,5" />
+                            <line x1="50" y1="350" x2="750" y2="350" stroke="#6B6B6B" stroke-width="1"
+                                stroke-dasharray="5,5" />
+                            <line x1="50" y1="450" x2="750" y2="450" stroke="#6B6B6B" stroke-width="1"
+                                stroke-dasharray="5,5" />
+                            <line x1="200" y1="50" x2="200" y2="550" stroke="#6B6B6B" stroke-width="1"
+                                stroke-dasharray="5,5" />
+                            <line x1="400" y1="50" x2="400" y2="550" stroke="#6B6B6B" stroke-width="1"
+                                stroke-dasharray="5,5" />
+                            <line x1="600" y1="50" x2="600" y2="550" stroke="#6B6B6B" stroke-width="1"
+                                stroke-dasharray="5,5" />
+
+                            <!-- Zone A: Vinilos (Orange) -->
+                            <rect x="60" y="60" width="130" height="180" fill="#FF5F00" fill-opacity="0.2"
+                                stroke="#FF5F00" stroke-width="3" />
+                            <text x="125" y="160" text-anchor="middle" font-family="Syne" font-size="14"
+                                font-weight="700" fill="#FF5F00">ZONA A</text>
+                            <text x="125" y="180" text-anchor="middle" font-family="Inter" font-size="12"
+                                fill="#121212">Vinilos</text>
+
+                            <!-- Zone B: Tatuajes (Red) -->
+                            <rect x="210" y="60" width="180" height="180" fill="#D62828" fill-opacity="0.2"
+                                stroke="#D62828" stroke-width="3" />
+                            <text x="300" y="160" text-anchor="middle" font-family="Syne" font-size="14"
+                                font-weight="700" fill="#D62828">ZONA B</text>
+                            <text x="300" y="180" text-anchor="middle" font-family="Inter" font-size="12"
+                                fill="#121212">Tatuajes & Piercing</text>
+
+                            <!-- Zone C: Ropa (Blue) -->
+                            <rect x="410" y="60" width="180" height="180" fill="#2B3A67" fill-opacity="0.2"
+                                stroke="#2B3A67" stroke-width="3" />
+                            <text x="500" y="160" text-anchor="middle" font-family="Syne" font-size="14"
+                                font-weight="700" fill="#2B3A67">ZONA C</text>
+                            <text x="500" y="180" text-anchor="middle" font-family="Inter" font-size="12"
+                                fill="#121212">Ropa & Vintage</text>
+
+                            <!-- Zone D: Arte (Yellow) -->
+                            <rect x="610" y="60" width="130" height="180" fill="#F4D03F" fill-opacity="0.3"
+                                stroke="#F4D03F" stroke-width="3" />
+                            <text x="675" y="160" text-anchor="middle" font-family="Syne" font-size="14"
+                                font-weight="700" fill="#967D24">ZONA D</text>
+                            <text x="675" y="180" text-anchor="middle" font-family="Inter" font-size="12"
+                                fill="#121212">Arte</text>
+
+                            <!-- Main Stage (Red area in center) -->
+                            <rect x="300" y="280" width="200" height="100" fill="#D62828" stroke="#121212"
+                                stroke-width="3" />
+                            <text x="400" y="335" text-anchor="middle" font-family="Syne" font-size="16"
+                                font-weight="800" fill="#E8E6E1">ESCENARIO</text>
+
+                            <!-- Zone F: Food (Green) -->
+                            <rect x="60" y="400" width="680" height="140" fill="#2ECC71" fill-opacity="0.2"
+                                stroke="#2ECC71" stroke-width="3" />
+                            <text x="400" y="475" text-anchor="middle" font-family="Syne" font-size="14"
+                                font-weight="700" fill="#27AE60">ZONA F: COMIDA & BEBIDAS</text>
+
+                            <!-- Bathrooms -->
+                            <rect x="60" y="270" width="60" height="60" fill="#6B6B6B" stroke="#121212"
+                                stroke-width="2" />
+                            <text x="90" y="305" text-anchor="middle" font-family="Inter" font-size="20">🚻</text>
+
+                            <!-- Emergency Exit 1 -->
+                            <rect x="710" y="270" width="30" height="60" fill="#FF5F00" stroke="#121212"
+                                stroke-width="2" />
+                            <text x="725" y="305" text-anchor="middle" font-family="Inter" font-size="16">🚪</text>
+
+                            <!-- Emergency Exit 2 (Main) -->
+                            <rect x="360" y="520" width="80" height="30" fill="#FF5F00" stroke="#121212"
+                                stroke-width="2" />
+                            <text x="400" y="540" text-anchor="middle" font-family="Inter" font-size="10"
+                                font-weight="600">ENTRADA</text>
+
+                            <!-- Trees / Shade Areas -->
+                            <circle cx="150" y="350" r="20" fill="#27AE60" opacity="0.5" />
+                            <circle cx="650" y="350" r="20" fill="#27AE60" opacity="0.5" />
+                            <circle cx="550" y="300" r="15" fill="#27AE60" opacity="0.5" />
+                            <circle cx="250" y="300" r="15" fill="#27AE60" opacity="0.5" />
+
+                            <!-- Title -->
+                            <text x="400" y="30" text-anchor="middle" font-family="Syne" font-size="18"
+                                font-weight="800" fill="#121212">PARQUE AGUA AZUL - TIANGUIS CULTURAL</text>
+                        </svg>
+                    </div>
+
+                    <!-- Legend -->
+                    <aside class="mapa-legend">
+                        <h3 class="mapa-legend__title">Leyenda</h3>
+
+                        <div class="mapa-legend__item">
+                            <span class="mapa-legend__color"
+                                style="background-color: rgba(255, 95, 0, 0.3); border-color: #FF5F00;"></span>
+                            <span>Zona A: Vinilos & Música</span>
+                        </div>
+
+                        <div class="mapa-legend__item">
+                            <span class="mapa-legend__color"
+                                style="background-color: rgba(214, 40, 40, 0.3); border-color: #D62828;"></span>
+                            <span>Zona B: Tatuajes & Piercing</span>
+                        </div>
+
+                        <div class="mapa-legend__item">
+                            <span class="mapa-legend__color"
+                                style="background-color: rgba(43, 58, 103, 0.3); border-color: #2B3A67;"></span>
+                            <span>Zona C: Ropa & Vintage</span>
+                        </div>
+
+                        <div class="mapa-legend__item">
+                            <span class="mapa-legend__color"
+                                style="background-color: rgba(244, 208, 63, 0.3); border-color: #F4D03F;"></span>
+                            <span>Zona D: Arte & Prints</span>
+                        </div>
+
+                        <div class="mapa-legend__item">
+                            <span class="mapa-legend__color"
+                                style="background-color: rgba(46, 204, 113, 0.3); border-color: #2ECC71;"></span>
+                            <span>Zona F: Comida & Bebidas</span>
+                        </div>
+
+                        <div class="mapa-legend__item">
+                            <span class="mapa-legend__color" style="background-color: #D62828;"></span>
+                            <span>Escenario Principal</span>
+                        </div>
+
+                        <h4 style="margin-top: var(--space-lg); margin-bottom: var(--space-md); font-size: 1rem;">
+                            Servicios</h4>
+
+                        <div class="mapa-legend__item">
+                            <span>🚻</span>
+                            <span>Baños</span>
+                        </div>
+
+                        <div class="mapa-legend__item">
+                            <span>🚪</span>
+                            <span>Salidas de Emergencia</span>
+                        </div>
+
+                        <div class="mapa-legend__item">
+                            <span>🌳</span>
+                            <span>Áreas de Sombra</span>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section class="section">
+            <div class="container">
+                <div class="event-banner reveal">
+                    <div class="event-banner__icon">📍</div>
+                    <h3 class="event-banner__title">Dirección</h3>
+                    <p class="event-banner__info">
+                        Parque Agua Azul, Calzada Independencia Sur s/n<br>
+                        Col. Agua Azul, Guadalajara, Jalisco, C.P. 44440
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__section">
+                    <h4>Tianguis Cultural</h4>
+                    <p>El corazón de la cultura alternativa en Guadalajara desde 2010.</p>
+                </div>
+
+                <div class="footer__section">
+                    <h4>Ubicación</h4>
+                    <p>
+                        Parque Agua Azul<br>
+                        Calzada Independencia Sur<br>
+                        Guadalajara, Jalisco
+                    </p>
+                </div>
+
+                <div class="footer__section">
+                    <h4>Horario</h4>
+                    <p>
+                        Todos los Sábados<br>
+                        10:00 AM - 4:00 PM<br>
+                        Entrada Libre
+                    </p>
+                </div>
+
+                <div class="footer__section">
+                    <h4>Navegación</h4>
+                    <p>
+                        <a href="index.html">Inicio</a><br>
+                        <a href="directorio.html">Directorio</a><br>
+                        <a href="mapa.html">Mapa</a><br>
+                        <a href="historia.html">Historia</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>© 2024 Tianguis Cultural de Guadalajara. Cultura libre, siempre.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

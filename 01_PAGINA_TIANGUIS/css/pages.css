@@ -1,0 +1,328 @@
+/* ============================================
+   TIANGUIS CULTURAL - PAGE LAYOUTS
+   Neo-Brutalist Page Styles
+   ============================================ */
+
+/* === MAIN CONTENT WRAPPER === */
+main {
+    padding-top: 80px;
+    /* Header offset */
+    min-height: 100vh;
+}
+
+/* === HERO SECTION === */
+.hero {
+    position: relative;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-xl) var(--space-lg);
+    overflow: hidden;
+}
+
+.hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+            var(--asfalto-profundo) 0%,
+            #1a1a1a 50%,
+            var(--asfalto-profundo) 100%);
+    z-index: -2;
+}
+
+.hero__background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF5F00' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: -1;
+}
+
+.hero__content {
+    max-width: 900px;
+}
+
+.hero__title {
+    margin-bottom: var(--space-md);
+    text-shadow: 4px 4px 0 var(--cempasuchil-neon);
+}
+
+.hero__subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--gris-concreto);
+    margin-bottom: var(--space-xl);
+    font-weight: 400;
+}
+
+.hero__actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* === SECTION STYLES === */
+.section {
+    padding: var(--space-2xl) 0;
+}
+
+.section__header {
+    margin-bottom: var(--space-xl);
+}
+
+.section__title {
+    display: inline-block;
+    padding-bottom: var(--space-sm);
+    border-bottom: 4px solid var(--cempasuchil-neon);
+}
+
+.section__subtitle {
+    color: var(--gris-concreto);
+    margin-top: var(--space-sm);
+    font-size: 1.125rem;
+}
+
+/* === EVENT BANNER === */
+.event-banner {
+    background-color: rgba(255, 95, 0, 0.1);
+    border: 3px solid var(--cempasuchil-neon);
+    padding: var(--space-lg);
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.event-banner__icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+}
+
+.event-banner__title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
+}
+
+.event-banner__info {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--gris-concreto);
+}
+
+/* === ZONES GRID === */
+.zones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+}
+
+/* === DIRECTORIO GRID === */
+.directorio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-lg);
+}
+
+.directorio-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--space-2xl);
+    color: var(--gris-concreto);
+}
+
+/* === MAPA PAGE === */
+.mapa-container {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: var(--space-xl);
+    align-items: start;
+}
+
+.mapa-svg {
+    background-color: var(--papel-crema);
+    border: 3px solid var(--asfalto-profundo);
+    box-shadow: var(--shadow-brutal);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mapa-svg svg {
+    width: 100%;
+    height: 100%;
+}
+
+.mapa-legend {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 3px solid var(--gris-concreto);
+    padding: var(--space-lg);
+}
+
+.mapa-legend__title {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--cempasuchil-neon);
+}
+
+.mapa-legend__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mapa-legend__color {
+    width: 20px;
+    height: 20px;
+    border: 2px solid currentColor;
+}
+
+/* === HISTORIA PAGE - HORIZONTAL TIMELINE === */
+.timeline-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: var(--space-xl) 0;
+    cursor: grab;
+}
+
+.timeline-container:active {
+    cursor: grabbing;
+}
+
+.timeline {
+    display: flex;
+    gap: var(--space-xl);
+    padding: var(--space-lg);
+    min-width: max-content;
+}
+
+.timeline-item {
+    flex: 0 0 350px;
+    background-color: var(--papel-crema);
+    color: var(--asfalto-profundo);
+    border: 3px solid var(--asfalto-profundo);
+    box-shadow: var(--shadow-brutal);
+    transition: all var(--transition-smooth);
+}
+
+.timeline-item--old {
+    filter: grayscale(100%);
+}
+
+.timeline-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-brutal-hover);
+    filter: grayscale(0%);
+}
+
+.timeline-item__image {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+}
+
+.timeline-item__content {
+    padding: var(--space-lg);
+}
+
+.timeline-item__year {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--cempasuchil-neon);
+    line-height: 1;
+    margin-bottom: var(--space-sm);
+}
+
+.timeline-item__title {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
+}
+
+.timeline-item__description {
+    font-size: 0.875rem;
+    color: var(--gris-concreto);
+    line-height: 1.6;
+}
+
+.timeline-hint {
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--gris-concreto);
+    margin-top: var(--space-lg);
+}
+
+.timeline-hint span {
+    display: inline-block;
+    animation: float 2s ease-in-out infinite;
+}
+
+/* === PAGE HEADER (for inner pages) === */
+.page-header {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+    border-bottom: 3px solid var(--gris-concreto);
+    margin-bottom: var(--space-xl);
+}
+
+.page-header__title {
+    margin-bottom: var(--space-sm);
+}
+
+.page-header__description {
+    color: var(--gris-concreto);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+    .mapa-container {
+        grid-template-columns: 1fr;
+    }
+
+    .mapa-legend {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding: var(--space-2xl) var(--space-md);
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .directorio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item {
+        flex: 0 0 280px;
+    }
+
+    .zones-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .zones-grid {
+        grid-template-columns: 1fr;
+    }
+}

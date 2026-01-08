@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Historia del Tianguis Cultural de Guadalajara. Desde 2010 hasta hoy, un viaje por la cultura alternativa tapatía.">
+
+    <title>Historia | Tianguis Cultural de Guadalajara</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <style>
+        /* Timeline specific styles */
+        .timeline-scroll-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: var(--space-xl) 0;
+            margin: 0 calc(-1 * var(--space-lg));
+            padding-left: var(--space-lg);
+            padding-right: var(--space-lg);
+            cursor: grab;
+            scrollbar-width: thin;
+            scrollbar-color: var(--cempasuchil-neon) var(--asfalto-profundo);
+        }
+
+        .timeline-scroll-container:active {
+            cursor: grabbing;
+        }
+
+        .timeline-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .timeline-scroll-container::-webkit-scrollbar-track {
+            background: var(--asfalto-profundo);
+        }
+
+        .timeline-scroll-container::-webkit-scrollbar-thumb {
+            background: var(--gris-concreto);
+            border-radius: 0;
+        }
+
+        .timeline-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: var(--cempasuchil-neon);
+        }
+
+        .timeline-track {
+            display: flex;
+            gap: var(--space-xl);
+            min-width: max-content;
+            padding: var(--space-md);
+        }
+
+        .timeline-card {
+            flex: 0 0 380px;
+            background-color: var(--papel-crema);
+            color: var(--asfalto-profundo);
+            border: 4px solid var(--asfalto-profundo);
+            box-shadow: var(--shadow-brutal);
+            transition: all var(--transition-smooth);
+            overflow: hidden;
+        }
+
+        .timeline-card--past {
+            filter: grayscale(80%);
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-10px) rotate(-1deg);
+            box-shadow: 16px 16px 0 var(--cempasuchil-neon);
+            filter: grayscale(0%);
+        }
+
+        .timeline-card__image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--asfalto-profundo);
+        }
+
+        .timeline-card__body {
+            padding: var(--space-lg);
+        }
+
+        .timeline-card__year {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--cempasuchil-neon);
+            line-height: 1;
+            margin-bottom: var(--space-sm);
+            text-shadow: 3px 3px 0 var(--asfalto-profundo);
+        }
+
+        .timeline-card__title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: var(--space-md);
+            text-transform: uppercase;
+        }
+
+        .timeline-card__text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--gris-concreto);
+        }
+
+        .scroll-hint {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-md);
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            color: var(--gris-concreto);
+            margin-top: var(--space-lg);
+        }
+
+        .scroll-hint__arrow {
+            font-size: 1.5rem;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-card {
+                flex: 0 0 300px;
+            }
+
+            .timeline-card__year {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">TIANGUIS<span>.</span>CULTURAL</a>
+
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav__link">Inicio</a>
+                <a href="directorio.html" class="nav__link">Directorio</a>
+                <a href="mapa.html" class="nav__link">Mapa</a>
+                <a href="historia.html" class="nav__link nav__link--active">Historia</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-header__title">Time-Travel</h1>
+                <p class="page-header__description">
+                    Un viaje a través de los años del Tianguis Cultural.<br>
+                    Desliza para explorar nuestra historia.
+                </p>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="section">
+            <div class="container">
+                <div class="timeline-scroll-container" id="timeline">
+                    <div class="timeline-track">
+
+                        <!-- 2010 -->
+                        <article class="timeline-card timeline-card--past">
+                            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=200&fit=crop&sat=-100"
+                                alt="2010 - El Origen" class="timeline-card__image">
+                            <div class="timeline-card__body">
+                                <div class="timeline-card__year">2010</div>
+                                <h2 class="timeline-card__title">El Origen</h2>
+                                <p class="timeline-card__text">
+                                    Un grupo de amantes del rock y la cultura alternativa decide reunirse cada sábado
+                                    en el Parque Agua Azul. Con apenas 15 puestos, nace el Tianguis Cultural.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- 2012 -->
+                        <article class="timeline-card timeline-card--past">
+                            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=200&fit=crop&sat=-100"
+                                alt="2012 - La Primera Batalla" class="timeline-card__image">
+                            <div class="timeline-card__body">
+                                <div class="timeline-card__year">2012</div>
+                                <h2 class="timeline-card__title">La Primera Batalla de Bandas</h2>
+                                <p class="timeline-card__text">
+                                    Se organiza la primera batalla de bandas. 20 grupos locales compiten ante
+                                    más de 500 personas. El tianguis ya cuenta con 50 expositores fijos.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- 2015 -->
+                        <article class="timeline-card timeline-card--past">
+                            <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=400&h=200&fit=crop&sat=-100"
+                                alt="2015 - Expansión" class="timeline-card__image">
+                            <div class="timeline-card__body">
+                                <div class="timeline-card__year">2015</div>
+                                <h2 class="timeline-card__title">La Gran Expansión</h2>
+                                <p class="timeline-card__text">
+                                    Llegamos a 100 expositores. Se incorporan tatuadores profesionales, artistas
+                                    visuales y el área de comida se vuelve legendaria en la ciudad.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- 2018 -->
+                        <article class="timeline-card timeline-card--past">
+                            <img src="https://images.unsplash.com/photo-1561059488-916d69792237?w=400&h=200&fit=crop&sat=-100"
+                                alt="2018 - Reconocimiento" class="timeline-card__image">
+                            <div class="timeline-card__body">
+                                <div class="timeline-card__year">2018</div>
+                                <h2 class="timeline-card__title">Patrimonio Cultural</h2>
+                                <p class="timeline-card__text">
+                                    El Tianguis Cultural es reconocido como parte del patrimonio cultural
+                                    de Guadalajara. Se instalan baños públicos y mejoras de infraestructura.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- 2020 -->
+                        <article class="timeline-card timeline-card--past">
+                            <img src="https://images.unsplash.com/photo-1584634731339-252c581abfc5?w=400&h=200&fit=crop&sat=-100"
+                                alt="2020 - Pandemia" class="timeline-card__image">
+                            <div class="timeline-card__body">
+                                <div class="timeline-card__year">2020</div>
+                                <h2 class="timeline-card__title">La Pausa</h2>
+                                <p class="timeline-card__text">
+                                    La pandemia obliga a cerrar por 8 meses. La comunidad se mantiene unida
+                                    a través de redes sociales y ventas en línea. La cultura no se detiene.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- 2021 -->
+                        <article class="timeline-card">
+                            <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=200&fit=crop"
+                                alt="2021 - Regreso" class="timeline-card__image">
+                            <div class="timeline-card__body">
+                                <div class="timeline-card__year">2021</div>
+                                <h2 class="timeline-card__title">El Regreso Triunfal</h2>
+                                <p class="timeline-card__text">
+                                    Reapertura con protocolos de seguridad. Más de 2,000 visitantes el primer
+                                    día. La escena tapatía demuestra que la cultura es resiliente.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- 2023 -->
+                        <article class="timeline-card">
+                            <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=400&h=200&fit=crop"
+                                alt="2023 - Nueva Era" class="timeline-card__image">
+                            <div class="timeline-card__body">
+                                <div class="timeline-card__year">2023</div>
+                                <h2 class="timeline-card__title">Nueva Generación</h2>
+                                <p class="timeline-card__text">
+                                    Una nueva generación de artistas y emprendedores se suma. El tianguis
+                                    ahora tiene 180 expositores y es destino obligado para turistas.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- 2024 -->
+                        <article class="timeline-card">
+                            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=400&h=200&fit=crop"
+                                alt="2024 - Hoy" class="timeline-card__image">
+                            <div class="timeline-card__body">
+                                <div class="timeline-card__year">2024</div>
+                                <h2 class="timeline-card__title">Hoy</h2>
+                                <p class="timeline-card__text">
+                                    Más de 200 expositores, música en vivo cada sábado, comunidad consolidada.
+                                    El Tianguis Cultural sigue siendo el corazón de la escena alternativa.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- Future -->
+                        <article class="timeline-card"
+                            style="background: linear-gradient(135deg, var(--cempasuchil-neon) 0%, #FF8C42 100%); border-color: var(--cempasuchil-neon);">
+                            <div class="timeline-card__body"
+                                style="height: 100%; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+                                <div class="timeline-card__year"
+                                    style="color: var(--asfalto-profundo); text-shadow: none;">????</div>
+                                <h2 class="timeline-card__title" style="color: var(--asfalto-profundo);">El Futuro</h2>
+                                <p class="timeline-card__text" style="color: var(--asfalto-profundo);">
+                                    La historia continúa escribiéndose cada sábado.
+                                    Tú eres parte de ella.
+                                </p>
+                                <a href="directorio.html" class="btn btn--secondary"
+                                    style="margin-top: var(--space-lg); border-color: var(--asfalto-profundo); color: var(--asfalto-profundo);">
+                                    Explora el Directorio
+                                </a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <div class="scroll-hint">
+                    <span class="scroll-hint__arrow">←</span>
+                    <span>Desliza para explorar la historia</span>
+                    <span class="scroll-hint__arrow">→</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="section bg-light">
+            <div class="container">
+                <blockquote class="reveal" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <p
+                        style="font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.5rem); line-height: 1.4; margin-bottom: var(--space-lg);">
+                        "El Tianguis no es solo un mercado. Es un refugio, un punto de encuentro,
+                        un pedazo de asfalto donde la cultura alternativa puede respirar."
+                    </p>
+                    <footer style="font-family: var(--font-mono); font-size: 0.875rem; color: var(--gris-concreto);">
+                        — Fundador Anónimo, 2010
+                    </footer>
+                </blockquote>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__section">
+                    <h4>Tianguis Cultural</h4>
+                    <p>El corazón de la cultura alternativa en Guadalajara desde 2010.</p>
+                </div>
+
+                <div class="footer__section">
+                    <h4>Ubicación</h4>
+                    <p>
+                        Parque Agua Azul<br>
+                        Calzada Independencia Sur<br>
+                        Guadalajara, Jalisco
+                    </p>
+                </div>
+
+                <div class="footer__section">
+                    <h4>Horario</h4>
+                    <p>
+                        Todos los Sábados<br>
+                        10:00 AM - 4:00 PM<br>
+                        Entrada Libre
+                    </p>
+                </div>
+
+                <div class="footer__section">
+                    <h4>Navegación</h4>
+                    <p>
+                        <a href="index.html">Inicio</a><br>
+                        <a href="directorio.html">Directorio</a><br>
+                        <a href="mapa.html">Mapa</a><br>
+                        <a href="historia.html">Historia</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>© 2024 Tianguis Cultural de Guadalajara. Cultura libre, siempre.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Drag to scroll for timeline
+        const timeline = document.getElementById('timeline');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        timeline.addEventListener('mousedown', (e) => {
+            isDown = true;
+            timeline.style.cursor = 'grabbing';
+            startX = e.pageX - timeline.offsetLeft;
+            scrollLeft = timeline.scrollLeft;
+        });
+
+        timeline.addEventListener('mouseleave', () => {
+            isDown = false;
+            timeline.style.cursor = 'grab';
+        });
+
+        timeline.addEventListener('mouseup', () => {
+            isDown = false;
+            timeline.style.cursor = 'grab';
+        });
+
+        timeline.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - timeline.offsetLeft;
+            const walk = (x - startX) * 2;
+            timeline.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body>
+
+</html>

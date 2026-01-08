@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Directorio de expositores del Tianguis Cultural de Guadalajara. Encuentra vinilos, tatuajes, ropa vintage, arte y comida.">
+
+    <title>Directorio | Tianguis Cultural de Guadalajara</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">TIANGUIS<span>.</span>CULTURAL</a>
+
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav__link">Inicio</a>
+                <a href="directorio.html" class="nav__link nav__link--active">Directorio</a>
+                <a href="mapa.html" class="nav__link">Mapa</a>
+                <a href="historia.html" class="nav__link">Historia</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-header__title">The Grid</h1>
+                <p class="page-header__description">
+                    Directorio de expositores del Tianguis Cultural.
+                    Filtra por categoría para encontrar lo que buscas.
+                </p>
+            </div>
+        </section>
+
+        <!-- Filters & Grid -->
+        <section class="section">
+            <div class="container">
+                <!-- Filters -->
+                <div id="filters" class="filters reveal">
+                    <!-- Filters will be injected by JavaScript -->
+                </div>
+
+                <!-- Expositor Grid -->
+                <div id="directorio-grid" class="directorio-grid reveal-stagger">
+                    <!-- Cards will be injected by JavaScript -->
+                    <p class="directorio-empty">Cargando expositores...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__section">
+                    <h4>Tianguis Cultural</h4>
+                    <p>
+                        El corazón de la cultura alternativa en Guadalajara desde 2010.
+                    </p>
+                </div>
+
+                <div class="footer__section">
+                    <h4>Ubicación</h4>
+                    <p>
+                        Parque Agua Azul<br>
+                        Calzada Independencia Sur<br>
+                        Guadalajara, Jalisco
+                    </p>
+                </div>
+
+                <div class="footer__section">
+                    <h4>Horario</h4>
+                    <p>
+                        Todos los Sábados<br>
+                        10:00 AM - 4:00 PM<br>
+                        Entrada Libre
+                    </p>
+                </div>
+
+                <div class="footer__section">
+                    <h4>Navegación</h4>
+                    <p>
+                        <a href="index.html">Inicio</a><br>
+                        <a href="directorio.html">Directorio</a><br>
+                        <a href="mapa.html">Mapa</a><br>
+                        <a href="historia.html">Historia</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>© 2024 Tianguis Cultural de Guadalajara. Cultura libre, siempre.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/directorio.js"></script>
+</body>
+
+</html>
