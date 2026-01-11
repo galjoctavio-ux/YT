@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dental-IA - Tu sonrisa, nuestra tecnología. Consultorio dental en Guadalajara, Jalisco.">
+    <title>Dental-IA | Consultorio Dental</title>
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dental-blue': '#0077B6',
+                        'dental-mint': '#48CAE4',
+                        'dental-dark': '#1A1A2E',
+                        'dental-light': '#F8F9FA',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-dental-light text-dental-dark">
+    
+    <!-- HEADER -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <span class="text-2xl">🦷</span>
+                <span class="text-xl font-bold text-dental-blue">Dental-IA</span>
+            </div>
+            <!-- CTA Button -->
+            <a href="https://wa.me/523312345678" 
+               class="bg-dental-blue hover:bg-dental-mint text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-300">
+                Contactar
+            </a>
+        </div>
+    </header>
+    
+    <!-- HERO -->
+    <section class="bg-gradient-to-br from-dental-blue to-dental-mint py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Dental-IA</h1>
+            <p class="text-xl md:text-2xl opacity-90">Tu sonrisa, nuestra tecnología</p>
+            <div class="mt-8">
+                <a href="#contacto" 
+                   class="bg-white text-dental-blue px-8 py-3 rounded-lg font-semibold hover:bg-dental-light transition-colors duration-300 inline-block">
+                    Agenda tu cita
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- UBICACIÓN -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold text-center text-dental-blue mb-8">📍 Ubicación</h2>
+            <div class="bg-dental-light rounded-xl p-6 text-center">
+                <p class="text-lg mb-2 font-semibold">Av. Vallarta 1234</p>
+                <p class="text-gray-600">Col. Centro, Guadalajara, Jalisco</p>
+                <p class="text-gray-600">CP 44100, México</p>
+                <a href="https://maps.google.com/?q=Av+Vallarta+1234+Guadalajara+Jalisco" 
+                   target="_blank"
+                   class="mt-4 inline-block border-2 border-dental-blue text-dental-blue px-6 py-2 rounded-lg hover:bg-dental-blue hover:text-white transition-colors duration-300">
+                    Ver en Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CONTACTO -->
+    <section id="contacto" class="py-16 px-4 bg-dental-light">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold text-center text-dental-blue mb-8">📞 Contáctanos</h2>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <!-- Teléfono -->
+                <a href="tel:+523312345678" 
+                   class="bg-white rounded-xl p-6 flex items-center gap-4 hover:shadow-lg transition-shadow duration-300">
+                    <span class="text-3xl">📞</span>
+                    <div>
+                        <p class="font-semibold text-dental-dark">Teléfono</p>
+                        <p class="text-dental-blue">(33) 1234-5678</p>
+                    </div>
+                </a>
+                
+                <!-- WhatsApp -->
+                <a href="https://wa.me/523312345678" 
+                   target="_blank"
+                   class="bg-white rounded-xl p-6 flex items-center gap-4 hover:shadow-lg transition-shadow duration-300">
+                    <span class="text-3xl">💬</span>
+                    <div>
+                        <p class="font-semibold text-dental-dark">WhatsApp</p>
+                        <p class="text-dental-blue">+52 33 1234 5678</p>
+                    </div>
+                </a>
+                
+                <!-- Email -->
+                <a href="mailto:contacto@dental-ia.com" 
+                   class="bg-white rounded-xl p-6 flex items-center gap-4 hover:shadow-lg transition-shadow duration-300">
+                    <span class="text-3xl">✉️</span>
+                    <div>
+                        <p class="font-semibold text-dental-dark">Email</p>
+                        <p class="text-dental-blue">contacto@dental-ia.com</p>
+                    </div>
+                </a>
+                
+                <!-- Redes Sociales -->
+                <div class="bg-white rounded-xl p-6 flex items-center gap-4">
+                    <span class="text-3xl">🔗</span>
+                    <div>
+                        <p class="font-semibold text-dental-dark mb-2">Redes Sociales</p>
+                        <div class="flex gap-3">
+                            <a href="https://instagram.com/dental.ia" target="_blank" 
+                               class="text-dental-blue hover:text-dental-mint transition-colors">
+                                📷 Instagram
+                            </a>
+                            <a href="https://facebook.com/DentalIA" target="_blank"
+                               class="text-dental-blue hover:text-dental-mint transition-colors">
+                                👤 Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- WhatsApp CTA -->
+            <div class="mt-8 text-center">
+                <a href="https://wa.me/523312345678?text=Hola,%20me%20gustaría%20agendar%20una%20cita" 
+                   target="_blank"
+                   class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg inline-flex items-center gap-2 transition-colors duration-300">
+                    <span>💬</span> Escribir por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer class="bg-dental-dark text-white py-6 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-sm opacity-75">© 2026 Dental-IA. Todos los derechos reservados.</p>
+            <p class="text-xs opacity-50 mt-2">Guadalajara, Jalisco, México</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
