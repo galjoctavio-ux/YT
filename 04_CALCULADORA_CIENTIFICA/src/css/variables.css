@@ -1,0 +1,122 @@
+/**
+ * Variables CSS - Design Tokens
+ * Calculadora Científica MVP
+ * Referencia: Plan_Maestro_Definitivo.md - Sección D.2.7
+ */
+
+:root {
+  /* === COLORES === */
+  
+  /* Primarios */
+  --primary: #3B82F6;
+  --primary-hover: #2563EB;
+  --primary-active: #1D4ED8;
+  
+  /* Acento */
+  --accent: #F59E0B;
+  --accent-hover: #D97706;
+  --accent-active: #B45309;
+  
+  /* Secundario */
+  --secondary: #64748B;
+  --secondary-hover: #475569;
+  
+  /* Semánticos */
+  --success: #10B981;
+  --error: #EF4444;
+  --error-hover: #DC2626;
+  --warning: #F59E0B;
+  --info: #0EA5E9;
+  
+  /* Fondos - Modo Claro */
+  --bg-primary: #F8FAFC;
+  --bg-elevated: #FFFFFF;
+  --bg-subtle: #F1F5F9;
+  
+  /* Texto - Modo Claro */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-tertiary: #94A3B8;
+  
+  /* Bordes */
+  --border-default: #E2E8F0;
+  --border-strong: #CBD5E1;
+  
+  /* === TIPOGRAFÍA === */
+  --font-display: 'JetBrains Mono', 'Consolas', monospace;
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  
+  /* Tamaños de texto */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.25rem;    /* 20px */
+  --text-xl: 1.563rem;   /* 25px */
+  --text-2xl: 2rem;      /* 32px */
+  --text-3xl: 2.5rem;    /* 40px */
+  --text-4xl: 3rem;      /* 48px */
+  
+  /* === ESPACIADO === */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  
+  /* === BORDES === */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+  
+  /* === SOMBRAS === */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  --shadow-glow-primary: 0 0 20px rgba(59, 130, 246, 0.4);
+  --shadow-glow-accent: 0 0 20px rgba(245, 158, 11, 0.4);
+  
+  /* === TRANSICIONES === */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow: 0.3s ease;
+}
+
+/* === MODO OSCURO === */
+[data-theme="dark"] {
+  /* Fondos */
+  --bg-primary: #0F172A;
+  --bg-elevated: #1E293B;
+  --bg-subtle: #334155;
+  
+  /* Texto */
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-tertiary: #64748B;
+  
+  /* Bordes */
+  --border-default: #334155;
+  --border-strong: #475569;
+  
+  /* Interactivos (hovers más claros en modo oscuro) */
+  --primary-hover: #60A5FA;
+  --accent-hover: #FBBF24;
+  --secondary-hover: #94A3B8;
+  
+  /* Sombras más pronunciadas */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+}

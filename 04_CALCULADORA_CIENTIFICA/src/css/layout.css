@@ -1,0 +1,242 @@
+/**
+ * Layout CSS
+ * Calculadora Científica MVP
+ * Estructura responsiva de la aplicación - Mobile First
+ */
+
+/* === CONTENEDORES PRINCIPALES === */
+
+.header {
+    padding: var(--space-4);
+    background-color: var(--bg-elevated);
+    border-bottom: 1px solid var(--border-default);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-4);
+    gap: var(--space-4);
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footer {
+    padding: var(--space-4);
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    border-top: 1px solid var(--border-default);
+    background-color: var(--bg-elevated);
+}
+
+/* === CALCULADORA === */
+
+.calculator-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+/* === DISPLAY === */
+
+.display {
+    background: var(--bg-elevated);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-default);
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* === TECLADO === */
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-2);
+}
+
+/* Botón 0 ocupa 2 columnas */
+.keypad .btn-wide {
+    grid-column: span 2;
+}
+
+/* === HISTORIAL === */
+
+.history-panel {
+    width: 100%;
+    max-width: 400px;
+    display: none;
+    /* Oculto por defecto en móvil */
+}
+
+.history-panel.active {
+    display: block;
+}
+
+.history-list {
+    max-height: 300px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.history-empty {
+    color: var(--text-tertiary);
+    text-align: center;
+    padding: var(--space-6);
+    font-style: italic;
+}
+
+/* Botón toggle historial (móvil) */
+.history-toggle {
+    position: fixed;
+    bottom: var(--space-4);
+    right: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-full);
+    background: var(--bg-elevated);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-default);
+    z-index: 50;
+}
+
+.history-toggle span {
+    font-size: var(--text-sm);
+    font-weight: 500;
+}
+
+/* === MODAL === */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    padding: var(--space-4);
+}
+
+.modal-overlay[hidden] {
+    display: none;
+}
+
+.modal {
+    background: var(--bg-elevated);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-xl);
+    max-width: 400px;
+    width: 100%;
+    animation: modalEnter 0.2s ease;
+}
+
+@keyframes modalEnter {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* === ALERTAS === */
+
+.alert-container {
+    position: fixed;
+    top: var(--space-4);
+    right: var(--space-4);
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    max-width: 320px;
+}
+
+/* === RESPONSIVE - TABLET Y DESKTOP === */
+
+@media (min-width: 768px) {
+    .main-content {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        padding: var(--space-8);
+        gap: var(--space-8);
+    }
+
+    .calculator-container {
+        max-width: 380px;
+    }
+
+    /* Historial siempre visible en desktop */
+    .history-panel {
+        display: block;
+        max-width: 320px;
+        position: sticky;
+        top: calc(var(--space-4) + 80px);
+    }
+
+    /* Ocultar toggle de historial en desktop */
+    .history-toggle {
+        display: none;
+    }
+
+    .history-list {
+        max-height: 400px;
+    }
+
+    /* Modal más centrado */
+    .modal {
+        max-width: 440px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-content {
+        padding: var(--space-12);
+    }
+
+    .calculator-container {
+        max-width: 420px;
+    }
+
+    .history-panel {
+        max-width: 360px;
+    }
+}

@@ -1,0 +1,395 @@
+/**
+ * Componentes CSS
+ * Calculadora Científica MVP
+ * Estilos de todos los componentes UI
+ */
+
+/* =================================
+   BOTONES - SISTEMA DE BOTONES
+   ================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 500;
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    user-select: none;
+    min-height: 60px;
+}
+
+/* Botón Primario - Igual (=) */
+.btn-primary {
+    background: var(--primary);
+    color: #FFFFFF;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    box-shadow: var(--shadow-glow-primary);
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    background: var(--primary-active);
+    transform: translateY(0);
+    box-shadow: var(--shadow-inner);
+}
+
+.btn-primary:disabled {
+    background: var(--text-tertiary);
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Botón Secundario - Números (0-9) */
+.btn-secondary {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    border: 1px solid var(--border-default);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-subtle);
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:active {
+    background: var(--bg-subtle);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-inner);
+}
+
+/* Botón Acento - Operadores (+, -, ×, ÷) */
+.btn-accent {
+    background: var(--accent);
+    color: #FFFFFF;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-accent:hover {
+    background: var(--accent-hover);
+    box-shadow: var(--shadow-glow-accent);
+    transform: translateY(-1px);
+}
+
+.btn-accent:active {
+    background: var(--accent-active);
+    transform: translateY(0);
+    box-shadow: var(--shadow-inner);
+}
+
+.btn-accent.selected {
+    background: var(--accent-hover);
+    box-shadow: var(--shadow-glow-accent), inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Botón Crítico - Limpiar (C) */
+.btn-critical {
+    background: transparent;
+    color: var(--error);
+    border: 1px solid var(--border-default);
+}
+
+.btn-critical:hover {
+    background: #FEE2E2;
+    color: var(--error-hover);
+    border-color: #FECACA;
+}
+
+.btn-critical:active {
+    background: #FECACA;
+    color: #B91C1C;
+}
+
+[data-theme="dark"] .btn-critical:hover {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+[data-theme="dark"] .btn-critical:active {
+    background: rgba(239, 68, 68, 0.25);
+}
+
+/* Botón Crítico - Texto (para header historial) */
+.btn-critical-text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    color: var(--error);
+    transition: all var(--transition-fast);
+}
+
+.btn-critical-text:hover {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+/* Botón Auxiliar - Backspace (←), Toggle tema */
+.btn-auxiliary {
+    background: var(--bg-subtle);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-default);
+}
+
+.btn-auxiliary:hover {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+}
+
+.btn-auxiliary:active {
+    background: var(--bg-subtle);
+    box-shadow: var(--shadow-inner);
+}
+
+/* =================================
+   DISPLAY - PANTALLA DE RESULTADOS
+   ================================= */
+
+.display-operation {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 400;
+    color: var(--text-secondary);
+    text-align: right;
+    margin-bottom: var(--space-2);
+    min-height: 1.4em;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+.display-result {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: right;
+    line-height: 1;
+    min-height: 1.2em;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+.display-result.error {
+    color: var(--error);
+    font-size: var(--text-2xl);
+}
+
+/* =================================
+   CARDS - PANEL DE HISTORIAL
+   ================================= */
+
+.card {
+    background: var(--bg-elevated);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-default);
+}
+
+.card-header {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h2 {
+    font-size: var(--text-lg);
+    margin: 0;
+}
+
+/* Items del historial */
+.history-item {
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+    border: 1px solid transparent;
+}
+
+.history-item:hover {
+    background: var(--bg-subtle);
+    border-color: var(--border-default);
+}
+
+.history-item:active {
+    background: var(--bg-primary);
+}
+
+.history-item-operation {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-1);
+}
+
+.history-item-result {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* =================================
+   MODAL
+   ================================= */
+
+.modal-title {
+    font-family: var(--font-body);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+}
+
+.modal-message {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+    line-height: 1.6;
+}
+
+.modal-actions {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: flex-end;
+}
+
+.modal-actions .btn {
+    min-height: auto;
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--text-base);
+}
+
+/* =================================
+   ALERTAS Y MENSAJES
+   ================================= */
+
+.alert {
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    animation: alertEnter 0.2s ease;
+    box-shadow: var(--shadow-md);
+}
+
+@keyframes alertEnter {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.alert-error {
+    background: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #FECACA;
+}
+
+.alert-success {
+    background: #D1FAE5;
+    color: #065F46;
+    border: 1px solid #A7F3D0;
+}
+
+.alert-info {
+    background: #E0F2FE;
+    color: #075985;
+    border: 1px solid #BAE6FD;
+}
+
+/* Alertas modo oscuro */
+[data-theme="dark"] .alert-error {
+    background: rgba(239, 68, 68, 0.15);
+    color: #FCA5A5;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+[data-theme="dark"] .alert-success {
+    background: rgba(16, 185, 129, 0.15);
+    color: #6EE7B7;
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+[data-theme="dark"] .alert-info {
+    background: rgba(14, 165, 233, 0.15);
+    color: #7DD3FC;
+    border-color: rgba(14, 165, 233, 0.3);
+}
+
+/* =================================
+   ICONOS
+   ================================= */
+
+.icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* Toggle tema - mostrar/ocultar icono según tema */
+.icon-moon {
+    display: none;
+}
+
+[data-theme="dark"] .icon-sun {
+    display: none;
+}
+
+[data-theme="dark"] .icon-moon {
+    display: block;
+}
+
+/* =================================
+   UTILIDADES
+   ================================= */
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Transición de aparición para historial en móvil */
+.history-panel.entering {
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

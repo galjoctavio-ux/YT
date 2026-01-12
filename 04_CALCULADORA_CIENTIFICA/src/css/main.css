@@ -1,0 +1,11 @@
+/**
+ * Main CSS - Import Consolidado
+ * Calculadora Científica MVP
+ * Importa todos los archivos CSS en orden correcto
+ */
+
+@import 'variables.css';
+@import 'reset.css';
+@import 'base.css';
+@import 'layout.css';
+@import 'components.css';

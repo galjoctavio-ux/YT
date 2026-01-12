@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Calculadora científica en línea gratuita. Realiza operaciones matemáticas básicas con historial de cálculos. Fácil de usar, accesible y responsiva.">
+    <meta name="keywords"
+        content="calculadora, científica, online, matemáticas, cálculo, suma, resta, multiplicación, división">
+    <meta name="author" content="Calculadora Científica">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Calculadora Científica Online">
+    <meta property="og:description" content="Realiza operaciones matemáticas básicas con historial de cálculos">
+
+    <title>Calculadora Científica Online | Operaciones Matemáticas</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="header-title">Calculadora</h1>
+            <button id="themeToggle" class="btn-auxiliary" aria-label="Cambiar tema claro/oscuro">
+                <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="calculator-container">
+            <!-- Display -->
+            <section class="display" aria-label="Display de la calculadora" role="region" aria-live="polite">
+                <div id="displayOperation" class="display-operation" aria-label="Operación actual"></div>
+                <div id="displayResult" class="display-result" aria-label="Resultado">0</div>
+            </section>
+
+            <!-- Keypad -->
+            <section class="keypad" aria-label="Teclado de la calculadora">
+                <!-- Row 1: C (wide), ←, ÷ -->
+                <button class="btn btn-critical btn-wide" data-action="clear" aria-label="Limpiar todo">C</button>
+                <button class="btn btn-auxiliary" data-action="backspace" aria-label="Borrar último dígito">←</button>
+                <button class="btn btn-accent" data-action="operator" data-value="÷" aria-label="División">÷</button>
+
+                <!-- Row 2: 7, 8, 9, × -->
+                <button class="btn btn-secondary" data-action="number" data-value="7">7</button>
+                <button class="btn btn-secondary" data-action="number" data-value="8">8</button>
+                <button class="btn btn-secondary" data-action="number" data-value="9">9</button>
+                <button class="btn btn-accent" data-action="operator" data-value="×"
+                    aria-label="Multiplicación">×</button>
+
+                <!-- Row 3: 4, 5, 6, - -->
+                <button class="btn btn-secondary" data-action="number" data-value="4">4</button>
+                <button class="btn btn-secondary" data-action="number" data-value="5">5</button>
+                <button class="btn btn-secondary" data-action="number" data-value="6">6</button>
+                <button class="btn btn-accent" data-action="operator" data-value="-" aria-label="Resta">−</button>
+
+                <!-- Row 4: 1, 2, 3, + -->
+                <button class="btn btn-secondary" data-action="number" data-value="1">1</button>
+                <button class="btn btn-secondary" data-action="number" data-value="2">2</button>
+                <button class="btn btn-secondary" data-action="number" data-value="3">3</button>
+                <button class="btn btn-accent" data-action="operator" data-value="+" aria-label="Suma">+</button>
+
+                <!-- Row 5: 0, ., = -->
+                <button class="btn btn-secondary btn-wide" data-action="number" data-value="0">0</button>
+                <button class="btn btn-secondary" data-action="decimal" data-value="."
+                    aria-label="Punto decimal">.</button>
+                <button class="btn btn-primary" data-action="equals" aria-label="Igual">=</button>
+            </section>
+        </div>
+
+        <!-- History Panel -->
+        <aside class="history-panel card" aria-label="Panel de historial">
+            <div class="card-header">
+                <h2>Historial</h2>
+                <button id="clearHistory" class="btn-critical-text" aria-label="Limpiar historial">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="historyList" class="history-list">
+                <p class="history-empty">Sin operaciones</p>
+            </div>
+            <!-- Mobile toggle button -->
+            <button id="historyToggle" class="history-toggle btn-auxiliary" aria-label="Mostrar/ocultar historial"
+                aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Historial</span>
+            </button>
+        </aside>
+    </main>
+
+    <!-- Modal de Confirmación -->
+    <div id="modalOverlay" class="modal-overlay" hidden>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <h3 id="modalTitle" class="modal-title">Confirmar borrado</h3>
+            <p id="modalMessage" class="modal-message">¿Eliminar todo el historial de cálculos? Esta acción no se puede
+                deshacer.</p>
+            <div class="modal-actions">
+                <button id="modalCancel" class="btn btn-auxiliary">Cancelar</button>
+                <button id="modalConfirm" class="btn btn-critical">Eliminar todo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Container -->
+    <div id="alertContainer" class="alert-container" aria-live="assertive"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Calculadora Científica. Hecho con precisión matemática.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
